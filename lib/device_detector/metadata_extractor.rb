@@ -16,9 +16,7 @@ class DeviceDetector
 
     def extract_metadata
       user_agent.match(regex) do |match_data|
-        metadata_string.gsub(/\$(\d)/) {
-          match_data[$1.to_i].to_s
-        }.strip
+        metadata_string.gsub(%r{\$(\d)}) { match_data[$1.to_i].to_s }.strip
       end
     end
 

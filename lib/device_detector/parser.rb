@@ -25,7 +25,7 @@ class DeviceDetector
 
     def matching_regex
       from_cache([self.class.name, user_agent]) do
-        regexes.find { |r| user_agent =~ r[:regex] }
+        regexes.find { |r| user_agent.match?(r[:regex]) }
       end
     end
 

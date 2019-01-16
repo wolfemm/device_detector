@@ -4,7 +4,7 @@ class DeviceDetector
   class NameExtractor < MetadataExtractor
 
     def call
-      if /\$[0-9]/ =~ metadata_string
+      if %r{\$[0-9]}.match?(metadata_string)
         extract_metadata
       else
         metadata_string

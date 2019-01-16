@@ -165,23 +165,23 @@ class DeviceDetector
   end
 
   def android_tablet_fragment?
-    user_agent =~ build_regex('Android(?: \d.\d(?:.\d)?)?; Tablet;')
+    user_agent.match?(build_regex('Android(?: \d.\d(?:.\d)?)?; Tablet;'))
   end
 
   def android_mobile_fragment?
-    user_agent =~ build_regex('Android(?: \d.\d(?:.\d)?)?; Mobile;')
+    user_agent.match?(build_regex('Android(?: \d.\d(?:.\d)?)?; Mobile;'))
   end
 
   def touch_enabled?
-    user_agent =~ build_regex('Touch')
+    user_agent.match?(build_regex('Touch'))
   end
 
   def opera_tv_store?
-    user_agent =~ build_regex('Opera TV Store')
+    user_agent.match?(build_regex('Opera TV Store'))
   end
 
   def opera_tablet?
-    user_agent =~ build_regex('Opera Tablet')
+    user_agent.match?(build_regex('Opera Tablet'))
   end
 
   # This is a workaround until we support detecting mobile only browsers
