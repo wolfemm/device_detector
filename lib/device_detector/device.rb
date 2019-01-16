@@ -5,17 +5,17 @@ class DeviceDetector
 
     # order is relevant for testing with fixtures
     DEVICE_NAMES = [
-        'desktop',
-        'smartphone',
-        'tablet',
-        'feature phone',
-        'console',
-        'tv',
-        'car browser',
-        'smart display',
-        'camera',
-        'portable media player',
-        'phablet'
+      'desktop',
+      'smartphone',
+      'tablet',
+      'feature phone',
+      'console',
+      'tv',
+      'car browser',
+      'smart display',
+      'camera',
+      'portable media player',
+      'phablet'
     ]
 
     def known?
@@ -56,7 +56,11 @@ class DeviceDetector
         if regex && regex[:models]
           model_regex = regex[:models].find { |m| user_agent.match?(m[:regex]) }
           if model_regex
-            regex = regex.merge(:regex_model => model_regex[:regex], :model => model_regex[:model], :brand => model_regex[:brand])
+            regex = regex.merge(
+              regex_model: model_regex[:regex],
+              model: model_regex[:model],
+              brand: model_regex[:brand]
+            )
             regex[:device] = model_regex[:device] if model_regex.key?(:device)
             regex.delete(:models)
           end
