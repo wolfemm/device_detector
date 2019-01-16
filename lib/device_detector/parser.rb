@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DeviceDetector
   class Parser < Struct.new(:user_agent)
 
