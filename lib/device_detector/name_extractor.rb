@@ -7,7 +7,7 @@ class DeviceDetector
       if %r{\$[0-9]}.match?(metadata_string)
         extract_metadata
       else
-        metadata_string
+        metadata_string.freeze
       end
     end
 
