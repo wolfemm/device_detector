@@ -62,6 +62,7 @@ class DeviceDetector
         'DFB' => 'DragonFly',
         'FED' => 'Fedora',
         'FOS' => 'Firefox OS',
+        'FIR' => 'Fire OS',
         'BSD' => 'FreeBSD',
         'GNT' => 'Gentoo',
         'GTV' => 'Google TV',
@@ -69,6 +70,7 @@ class DeviceDetector
         'HAI' => 'Haiku OS',
         'IRI' => 'IRIX',
         'INF' => 'Inferno',
+        'KOS' => 'KaiOS',
         'KNO' => 'Knoppix',
         'KBT' => 'Kubuntu',
         'LIN' => 'GNU/Linux',
@@ -112,6 +114,7 @@ class DeviceDetector
         'WTV' => 'WebTV',
         'WIN' => 'Windows',
         'WCE' => 'Windows CE',
+        'WIO' => 'Windows IoT',
         'WMO' => 'Windows Mobile',
         'WPH' => 'Windows Phone',
         'WRT' => 'Windows RT',
@@ -126,14 +129,14 @@ class DeviceDetector
     DOWNCASED_OPERATING_SYSTEMS = OPERATING_SYSTEMS.each_with_object({}){|(short,long),h| h[long.downcase] = short}
 
     OS_FAMILIES = {
-        'Android'               => ['AND', 'CYN', 'REM', 'RZD', 'MLD', 'MCD', 'YNS'],
+        'Android'               => ['AND', 'CYN', 'FIR', 'REM', 'RZD', 'MLD', 'MCD', 'YNS'],
         'AmigaOS'               => ['AMG', 'MOR'],
         'Apple TV'              => ['ATV'],
         'BlackBerry'            => ['BLB', 'QNX'],
         'Brew'                  => ['BMP'],
         'BeOS'                  => ['BEO', 'HAI'],
         'Chrome OS'             => ['COS'],
-        'Firefox OS'            => ['FOS'],
+        'Firefox OS'            => ['FOS', 'KOS'],
         'Gaming Console'        => ['WII', 'PS3'],
         'Google TV'             => ['GTV'],
         'IBM'                   => ['OS2'],
@@ -148,7 +151,7 @@ class DeviceDetector
         'Unix'                  => ['SOS', 'AIX', 'HPX', 'BSD', 'NBS', 'OBS', 'DFB', 'SYL', 'IRI', 'T64', 'INF'],
         'WebTV'                 => ['WTV'],
         'Windows'               => ['WIN'],
-        'Windows Mobile'        => ['WPH', 'WMO', 'WCE', 'WRT']
+        'Windows Mobile'        => ['WPH', 'WMO', 'WCE', 'WRT', 'WIO']
     }
 
     FAMILY_TO_OS = OS_FAMILIES.each_with_object({}) do |(family,oss),h|
